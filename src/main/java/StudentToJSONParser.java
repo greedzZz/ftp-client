@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.util.Map;
 
 public class StudentToJSONParser {
-    public void parse(Map<Integer, String> students, Path path) {
+    public void parse(Map<Integer, String> students, Path path) throws IOException {
         try (BufferedWriter writer = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             writer.write("{\n");
             writer.write("\t\"students\": [");
@@ -27,7 +27,7 @@ public class StudentToJSONParser {
             writer.write("}");
             writer.flush();
         } catch (IOException e) {
-            System.out.println("No permission to write to the file");
+            throw new IOException("Не удалось обновить файл");
         }
     }
 }
