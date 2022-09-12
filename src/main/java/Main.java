@@ -1,3 +1,8 @@
+import ftp.FTPDownloader;
+import ftp.FTPUploader;
+import parsers.JSONToStudentParser;
+import parsers.StudentToJSONParser;
+
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
